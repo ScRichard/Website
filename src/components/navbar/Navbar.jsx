@@ -18,6 +18,9 @@ const Navbar = () => {
             </div>
             <div>
                 <Button text={"Domov"} href={"#"} icon={'bx bx-home-alt-2'}/>
+                <Button text={"O mne"} href={"#"} icon={'bx bx-home-alt-2'}/>
+                <Button text={"Tvorba"} href={"#"} icon={'bx bx-home-alt-2'}/>
+                <Button text={"Kontakt"} href={"#"} icon={'bx bx-home-alt-2'}/>
             </div>
         </div>
         </>
