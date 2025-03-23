@@ -11,12 +11,13 @@ import Button from './Button';
 const Navbar = () => {
     return (
         <>
-        <div className='flex flex-row justify-center items-center bg-gray-800 text-white p-2'>
+        <div className='absolute top-0 flex flex-row justify-center items-center w-full bg-gray-800 text-white p-4 z-50'>
             {/* Táto časť je na responzivitu */}
             <div className='hidden'>
-                <Button text={"Domov"} href={"#"} icon={'bx bx-home-alt-2'}/>
+                <Button text={""} href={"#"} icon={'bx bx-home-alt-2'}/>
             </div>
-            <div>
+            {/* Vnútorná kompozícia */}
+            <div className='flex flex-row justify-center items-center gap-2'>
                 <Button text={"Domov"} href={"#"} icon={'bx bx-home-alt-2'}/>
                 <Button text={"O mne"} href={"#"} icon={'bx bxs-ghost'}/>
                 <Button text={"Tvorba"} href={"#"} icon={'bx bx-injection'}/>
