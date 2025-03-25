@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Button from './Button';
 
 /* Navbar Component
@@ -9,9 +9,28 @@ import Button from './Button';
  * Last update: 2025-22-03
 */
 const Navbar = () => {
+
+    useEffect(() => {
+        window.addEventListener('scroll', function () {
+            console.log(window.pageYOffset)
+            if(window.pageYOffset > 500) {
+                document.getElementById("nav").classList.remove("absolute")
+                document.getElementById("nav").classList.add("sticky")
+                document.getElementById("nav").classList.remove("-translate-y-full")
+            }else if(window.pageYOffset > 0){
+                document.getElementById("nav").classList.remove("sticky")
+                document.getElementById("nav").classList.add("absolute")
+                document.getElementById("nav").classList.add("-translate-y-full")
+            }else {
+                document.getElementById("nav").classList.remove("sticky")
+                document.getElementById("nav").classList.add("absolute")
+                document.getElementById("nav").classList.remove("-translate-y-full")
+            }
+        });
+    }, [])
     return (
         <>
-        <div className='absolute top-0 flex flex-row justify-center items-center w-full bg-gray-800 text-white p-4 z-50'>
+        <div id="nav" className='absolute top-0 flex flex-row justify-center transition-all duration-500 items-center  w-full bg-[#0f0f0f38] backdrop-blur-lg shadow-xl text-white p-4 z-50'>
             {/* Táto časť je na responzivitu */}
             <div className='hidden'>
                 <Button text={""} href={"#"} icon={'bx bx-home-alt-2'}/>
