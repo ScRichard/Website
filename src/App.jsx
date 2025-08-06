@@ -1,20 +1,11 @@
-import { useState } from 'react'
-import Navbar from './components/navbar/Navbar.jsx'
-import Hero from './components/containers/Hero.jsx'
-import About from './components/containers/About.jsx'
-import Projects from './components/containers/Projects.jsx'
-import Footer from './components/containers/Footer.jsx'
+import React from 'react';
+import Navbar from './components/Navbar';
+function App() {
+  return (
+    <>
+      <Navbar />
+    </>
+  )
+}
 
-const App = () => {
-    return (
-        <>
-        <Navbar />
-        <Hero/>
-        <About/>
-        <Projects/>
-        <Footer/>
-        </>
-    )
-};
-
-export default App;
+export default App
