@@ -1,31 +1,48 @@
-import React, { useState } from "react";
+import React, { useRef } from "react";
+import emailjs from '@emailjs/browser';
 
 const Contact = () => {
-    const [form, setForm] = useState({ email: "", message: "" });
 
-    const handleChange = (e) => {
-        setForm({ ...form, [e.target.name]: e.target.value });
-    };
+    const form = useRef();
 
-    const handleSubmit = (e) => {
+    const sendEmail = (e) => {
         e.preventDefault();
-        // Handle form submission logic here
-        alert("Message sent!");
-        setForm({ email: "", message: "" });
+
+        emailjs
+        .sendForm('service_ewdy9de', 'template_4jhb3wp', form.current, {
+            publicKey: '4EUBqO8avT36mjapC',
+        })
+        .then(
+            () => {
+            console.log('SUCCESS!');
+            },
+            (error) => {
+            console.log('FAILED...', error);
+            },
+        );
     };
 
     return (
-        <form onSubmit={handleSubmit} className="w-full px-20 max-[700px]:px-3">
+        <form ref={form} onSubmit={sendEmail} className="w-full px-20 max-[700px]:px-3">
+            <label className="block text-gray-800 mb-2 font-semibold font-roboto-mono" htmlFor="name">
+                Name
+            </label>
+            <input
+                className="w-full px-4 py-2 rounded-lg outline-2 outline-gray-300 text-gray-700"
+                type="text"
+                id="name"
+                name="name"
+                required
+                placeholder="Janko Hrasko"
+            />
             <label className="block text-gray-800 mb-2 font-semibold font-roboto-mono" htmlFor="email">
                 Email
             </label>
             <input
-                className="w-full px-4 py-2 rounded-lg outline-2 outline-gray-300"
+                className="w-full px-4 py-2 rounded-lg outline-2 outline-gray-300 text-gray-700"
                 type="email"
                 id="email"
                 name="email"
-                value={form.email}
-                onChange={handleChange}
                 required
                 placeholder="your@email.com"
             />
@@ -33,11 +50,10 @@ const Contact = () => {
                 Message
             </label>
             <textarea
-                className="w-full px-4 py-2 rounded-lg outline-2 outline-gray-300 focus:ring-2 "
+                className="w-full px-4 py-2 rounded-lg outline-2 outline-gray-300 text-gray-700 focus:ring-2 "
                 id="message"
+                type="text"
                 name="message"
-                value={form.message}
-                onChange={handleChange}
                 required
                 rows={5}
                 placeholder="Type your message here..."
