@@ -1,29 +1,12 @@
-# Osobné moje portfólio
+# React + Vite
 
-Vítaj na mojom personálnom portfóliu, kde najdeš moje veci
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-## Funkcie
+Currently, two official plugins are available:
 
-- **Tvorba**: Moja práca
-- **O mne**: Niečo malé o mne a skusenostiach
-- **Kontakt**: Presmeruje to na email s mojou adresou
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## Getting Started
+## Expanding the ESLint configuration
 
-Webovú stránku si môžeš pozrieť na `https:\\www.richardschmidt.dev`
-
-## Klonovanie
-
-Na klonovanie repozitára použi (Iba pre source code a funkčnosť)
-
-```bash
-git clone https://github.com/tvoje-meno/portfolio.git
-```
-
-Vymeň `tvoje-meno` za tvoje meno
-
-## Licencia
-
-Tento projekt je licencovaný pod licenciou MIT. Viac informácií nájdeš v súbore `LICENSE`.
-
-Enjoy
+If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
